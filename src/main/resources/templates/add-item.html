@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Item</title>
+</head>
+<body>
+<form th:action="@{/add-item}" method="post">
+    <input type="text" name="name" placeholder="Item Name" required>
+    <input type="number" name="amount" placeholder="Item Amount" required>
+    <input type="date" name="expireDate" placeholder="Expiration Date" required>
+    <input type="submit" value="Submit">
+</form>
+</body>
+</html>

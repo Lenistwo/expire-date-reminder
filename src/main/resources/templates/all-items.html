@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>All Items</title>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+        h1{
+            align-content: center;
+        }
+    </style>
+</head>
+<body>
+<h1>All Items</h1>
+<br>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Amount</th>
+        <th>Expire Date</th>
+    </tr>
+    <th:block th:each="item : ${item}">
+        <tr>
+            <td th:text="${item.getId()}"></td>
+            <td th:text="${item.getItemName()}"></td>
+            <td th:text="${item.getAmount()}"></td>
+            <td th:text="${item.getExpireDate()}"></td>
+        </tr>
+    </th:block>
+</table>
+</body>
+</html>
