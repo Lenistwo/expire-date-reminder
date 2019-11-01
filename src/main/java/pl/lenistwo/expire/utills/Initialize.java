@@ -19,13 +19,13 @@ public class Initialize implements CommandLineRunner {
     }
 
     @Override
-    public void run(String... args) throws Exception {
+    public void run(String... args) {
         repo.save(new Item("Eggs", 3, LocalDate.of(2018,3,24)));
         repo.save(new Item("Bacon", 3, LocalDate.of(2018,5,24)));
         repo.save(new Item("Milk", 3, LocalDate.of(2018,6,24)));
         repo.save(new Item("Cheese", 3, LocalDate.of(2018,7,24)));
         repo.save(new Item("Bread", 3, LocalDate.of(2019,12,30)));
         repo.save(new Item("Honey", 3, LocalDate.of(2019,11,1)));
-        repo.save(new Item("GGG", 3, LocalDate.of(2019,11,2)));
+        repo.save(new Item("Ketchup", 3, LocalDate.of(2019,11,2)));
     }
 }

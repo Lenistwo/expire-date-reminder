@@ -1,16 +1,23 @@
 package pl.lenistwo.expire.utills;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
-
-import java.time.LocalTime;
+import pl.lenistwo.expire.services.EmailSenderService;
 
 @Component
 public class EmailSenderScheduler {
 
-    @Scheduled(cron = "0 15 6 * *")
+    private EmailSenderService senderService;
+
+    @Autowired
+    public EmailSenderScheduler(EmailSenderService senderService) {
+        this.senderService = senderService;
+    }
+
+    @Scheduled(cron = "0 15 6 * * *")
     private void logCurrentTime(){
-        System.out.println(LocalTime.now());
+        senderService.sendMessage("kacperek1003@gmail.com");
     }
 
 }
